@@ -1,47 +1,40 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const UploadForm = ({ onUpload }) => {
-    const [files, setFiles] = useState([]);
+function UploadForm({ onUploadSuccess, onUploadStart }) {
+  const [file, setFile] = useState(null);
 
-    const handleFileChange = (e) => {
-        console.log('Files selected:', e.target.files);
-        setFiles(e.target.files);
-    };
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const formData = new FormData();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!file) return;
 
-        console.log('Submitting files:', files);
+    onUploadStart(); // Indicate that upload is starting
 
-        for (let i = 0; i < files.length; i++) {
-            console.log(`Appending file: ${files[i].name} with size ${files[i].size} bytes`);
-            formData.append('files', files[i]);
-        }
+    const formData = new FormData();
+    formData.append('files', file);
 
-        try {
-            const response = await axios.post('/api/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            });
-            console.log('Response from server:', response.data);
-            onUpload(response.data.questions);
-        } catch (error) {
-            console.error('Error uploading files:', error);
-            if (error.response) {
-                console.error('Server responded with:', error.response.data);
-            }
-        }
-    };
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/upload', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <input type="file" multiple name="files" onChange={handleFileChange} className="file-input" />
-            <button type="submit" className="button">Upload</button>
-        </form>
-    );
-};
+      onUploadSuccess(response.data.questions); // Process and display the generated questions
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      onUploadSuccess([]); // Ensure loading is stopped even on error
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="file" onChange={handleFileChange} />
+      <button type="submit">Upload</button>
+    </form>
+  );
+}
 
 export default UploadForm;

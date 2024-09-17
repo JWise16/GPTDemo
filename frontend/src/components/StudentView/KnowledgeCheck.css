@@ -1,10 +1,27 @@
-/* Styles specific to KnowledgeCheck */
-.question-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    text-align: left;
-}
-
-.question-item {
-    margin: 10px 0;
-}
+.questions-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .question {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .question h1,
+  .question h2,
+  .question h3,
+  .question h4,
+  .question h5,
+  .question h6 {
+    margin-top: 0;
+  }
+  
+  .question p {
+    margin-bottom: 10px;
+  }
+  

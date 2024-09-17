@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
 import UploadForm from './UploadForm';
-import './ProfessorView.css';
+import ReactMarkdown from 'react-markdown';
 
-const ProfessorView = () => {
-    const [questions, setQuestions] = useState([]);
+function ProfessorView() {
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    const handleUpload = (newQuestions) => {
-        setQuestions(newQuestions || []);
-    };
+  const handleUploadSuccess = (generatedQuestions) => {
+    setQuestions(generatedQuestions);
+    setLoading(false); // Hide loading icon after successful upload
+  };
 
-    return (
-        <div className="main-container">
-            <h2>Professor's Upload Page</h2>
-            <UploadForm onUpload={handleUpload} />
-            <h2>Preview Knowledge Check</h2>
-            {questions.length > 0 && (
-                <div>
-                    <h3>Preview Generated Questions</h3>
-                    <ul className="question-list">
-                        {questions.map((question, index) => (
-                            <li key={index} className="question-item">{question}</li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-        </div>
-    );
-};
+  const handleUploadStart = () => {
+    setLoading(true); // Show loading icon when upload starts
+  };
+
+  return (
+    <div>
+      <h1>Professor's View</h1>
+      <UploadForm onUploadSuccess={handleUploadSuccess} onUploadStart={handleUploadStart} />
+      {loading ? <div className="loading-spinner"></div> : null}
+      <div className="questions-container">
+        {questions.map((question, index) => (
+          <div key={index} className="question">
+            <ReactMarkdown>{question}</ReactMarkdown>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default ProfessorView;

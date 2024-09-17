@@ -1,1 +1,9 @@
-/* Styles specific to StudentView */
+.main-container {
+    margin: 20px;
+  }
+  
+  .main-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
