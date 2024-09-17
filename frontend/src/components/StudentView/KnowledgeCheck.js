@@ -4,15 +4,26 @@ import './KnowledgeCheck.css';
 
 const KnowledgeCheck = () => {
     const [questions, setQuestions] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchQuestions = async () => {
-            const { data } = await axios.get('/api/questions');
-            setQuestions(data);
+            try {
+                const { data } = await axios.get('/api/questions');
+                setQuestions(data);
+            } catch (err) {
+                setError('Failed to fetch questions.');
+            } finally {
+                setLoading(false);
+            }
         };
 
         fetchQuestions();
     }, []);
+
+    if (loading) return <p>Loading questions...</p>;
+    if (error) return <p>{error}</p>;
 
     return (
         <div>
