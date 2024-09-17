@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background-color: #f3e5f5; /* Background Purple */
 }
 
 .App {
@@ -14,12 +16,14 @@ header {
   background-color: #FFFFFF; /* White background */
   padding: 1em 0;
   border-bottom: 1px solid #ddd; /* Separation between header and content */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* More modern look with shadow */
 }
 
 header h1, header nav a {
-  color: #800000; /* Maroon color for text */
+  color: #6a0dad; /* Primary Purple */
   margin: 0 15px;
   text-decoration: none;
+  font-family: 'Comic Neue', cursive;  /* More playful font */
 }
 
 header nav {
@@ -35,87 +39,48 @@ header nav a:hover {
 
 /* Main content styling */
 .main-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 30px;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-/* Home Page */
-.home-container {
-  background-color: #800000; /* Maroon background */
-  color: white;
-  padding: 40px 20px;
-  border-radius: 5px;
+/* Utility classes */
+.mt-20 {
   margin-top: 20px;
 }
 
-.home-container h1 {
-  font-size: 2.5em;
-  font-weight: bold;
+.mb-20 {
+  margin-bottom: 20px;
 }
 
-.home-container nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
+.flex {
+  display: flex;
 }
 
-.home-container nav ul li {
-  display: inline-block;
-  margin: 0 15px;
+.flex-column {
+  flex-direction: column;
 }
 
-.home-container nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: 2px solid white;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+.flex-center {
+  justify-content: center;
+  align-items: center;
 }
 
-.home-container nav ul li a:hover {
-  background-color: white;
-  color: #800000;
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #6a0dad;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
 }
 
-/* Professor and Student Pages */
-h2 {
-  color: #800000; /* Maroon color */
-}
-
-button, .button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #800000; /* Maroon color */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  margin: 15px 0;
-  transition: background-color 0.3s;
-}
-
-button:hover, .button:hover {
-  background-color: #a83232; /* Slightly lighter maroon on hover */
-}
-
-.file-input {
-  margin: 15px 0;
-}
-
-.question-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  text-align: left;
-}
-
-.question-item {
-  margin: 10px 0;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

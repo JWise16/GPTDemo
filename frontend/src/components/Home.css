@@ -1,0 +1,46 @@
+.home-container {
+    background: linear-gradient(135deg, #6a0dad, #9a4dff); /* Gradient background */
+    color: white;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* More modern shadow */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .home-container:hover {
+    transform: translateY(-5px); /* Hover effect */
+  }
+  
+  .home-container h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white; /* White text color */
+  }
+  
+  .home-container nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .home-container nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  .home-container nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .home-container nav ul li a:hover {
+    background-color: white;
+    color: #6a0dad; /* Primary Purple */
+  }
+  

@@ -1,4 +1,37 @@
-/* Styles specific to UploadForm */
-.file-input {
-    margin: 15px 0;
-}
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .upload-form input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #d8bfd8;  /* Light Purple Border */
+    border-radius: 5px;
+    background-color: #ffffff;  /* White Background */
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .upload-form input[type="file"]:hover {
+    border-color: #6a0dad;  /* Primary Purple */
+  }
+  
+  .upload-form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6a0dad;  /* Primary Purple */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .upload-form button:hover {
+    background-color: #9a4dff;  /* Accent Purple */
+  }
+  

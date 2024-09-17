@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import UploadForm from './UploadForm';
 import ReactMarkdown from 'react-markdown';
+import './ProfessorView.css';
 
 function ProfessorView() {
   const [questions, setQuestions] = useState([]);
@@ -16,11 +17,14 @@ function ProfessorView() {
   };
 
   return (
-    <div>
+    <div className="professor-container">
       <h1>Professor's View</h1>
-      <UploadForm onUploadSuccess={handleUploadSuccess} onUploadStart={handleUploadStart} />
-      {loading ? <div className="loading-spinner"></div> : null}
+      <div className="upload-section">
+        <UploadForm onUploadSuccess={handleUploadSuccess} onUploadStart={handleUploadStart} />
+        {loading ? <div className="loading-spinner"></div> : null}
+      </div>
       <div className="questions-container">
+        {questions.length > 0 && <p>Here are some questions based on the content provided:</p>}
         {questions.map((question, index) => (
           <div key={index} className="question">
             <ReactMarkdown>{question}</ReactMarkdown>

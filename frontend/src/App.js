@@ -9,7 +9,7 @@ function App() {
     return (
         <Router>
             <header>
-                <h1>GPTDemo</h1>
+                <h1>Brain</h1>
                 <nav>
                     <Link to="/">Home</Link>
                     <Link to="/professor">Professor</Link>

@@ -13,7 +13,7 @@ const KnowledgeCheck = () => {
             try {
                 const response = await axios.get('/api/questions');
                 console.log('API Response:', response.data);  // Log to confirm structure
-                setQuestions(response.data.questions);  // Adjust to match actual response
+                setQuestions(response.data.questions);  // Adjust this line to match actual response
             } catch (err) {
                 setError('Failed to fetch questions.');
             } finally {
@@ -28,7 +28,7 @@ const KnowledgeCheck = () => {
     if (error) return <p>{error}</p>;
 
     return (
-        <div>
+        <div className="knowledge-check-container">
             <h3>Knowledge Check</h3>
             <div className="questions-container">
                 {questions.map((question, index) => (

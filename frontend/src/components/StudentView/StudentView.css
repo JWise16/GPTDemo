@@ -1,9 +1,53 @@
-.main-container {
-    margin: 20px;
+.student-container {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
   }
   
-  .main-container h2 {
-    text-align: center;
+  h2 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 2em;
+    color: #6a0dad; /* Primary Purple */
     margin-bottom: 20px;
+  }
+  
+  .knowledge-check-container {
+    margin-top: 20px;
+  }
+  
+  .questions-container {
+    margin-top: 20px;
+  }
+  
+  .question {
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 2px solid #d8bfd8; /* Light Purple Border */
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .question:hover {
+    transform: translateY(-5px);
+  }
+  
+  .question h1,
+  .question h2,
+  .question h3,
+  .question h4,
+  .question h5,
+  .question h6 {
+    font-family: 'Poppins', sans-serif;
+    color: #4b0082; /* Dark Purple */
+  }
+  
+  .question p {
+    margin-bottom: 10px;
+    color: #6a0dad;
+    font-weight: 500;
   }
   
