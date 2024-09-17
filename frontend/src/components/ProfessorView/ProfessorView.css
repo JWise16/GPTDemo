@@ -1,94 +1,93 @@
 .professor-container {
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 900px;
-  }
-  
-  h1 {
-    font-family: 'Comic Neue', cursive;
-    font-size: 2em;
-    color: #6a0dad; /* Primary Purple */
-    margin-bottom: 20px;
-  }
-  
-  .upload-section {
-    background-color: #e1bee7; /* Light Purple Background */
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .upload-form {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .upload-form input[type="file"] {
-    padding: 10px;
-    border: 2px dashed #d8bfd8; /* Light Purple Border */
-    border-radius: 5px;
-    background-color: #ffffff; /* White Background */
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    transition: border-color 0.3s;
-  }
-  
-  .upload-form input[type="file"]:hover {
-    border-color: #6a0dad; /* Primary Purple */
-  }
-  
-  .upload-form button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    background-color: #6a0dad; /* Primary Purple */
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .upload-form button:hover {
-    background-color: #9a4dff; /* Accent Purple */
-  }
-  
-  .questions-container {
-    margin-top: 20px;
-  }
-  
-  .question {
-    padding: 20px;
-    margin: 10px 0;
-    background-color: #fff;
-    border: 2px solid #d8bfd8; /* Light Purple Border */
-    border-radius: 8px;
-    transition: transform 0.3s;
-  }
-  
-  .question:hover {
-    transform: translateY(-5px);
-  }
-  
-  .question h1,
-  .question h2,
-  .question h3,
-  .question h4,
-  .question h5,
-  .question h6 {
-    font-family: 'Poppins', sans-serif;
-    color: #4b0082; /* Dark Purple */
-  }
-  
-  .question p {
-    margin-bottom: 10px;
-    color: #6a0dad;
-    font-weight: 500;
-  }
-  
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+h1 {
+  font-family: 'Comic Neue', cursive;
+  font-size: 2em;
+  color: #6a0dad; /* Primary Purple */
+  margin-bottom: 20px;
+}
+
+.upload-section {
+  background-color: #e1bee7; /* Light Purple Background */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.upload-form {
+  display: flex;
+  gap: 10px;
+}
+
+.upload-form input[type="file"] {
+  padding: 10px;
+  border: 2px dashed #d8bfd8; /* Light Purple Border */
+  border-radius: 5px;
+  background-color: #ffffff; /* White Background */
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.upload-form input[type="file"]:hover {
+  border-color: #6a0dad; /* Primary Purple */
+}
+
+.upload-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #6a0dad; /* Primary Purple */
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-form button:hover {
+  background-color: #9a4dff; /* Accent Purple */
+}
+
+.questions-container {
+  margin-top: 20px;
+}
+
+.question {
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #fff;
+  border: 2px solid #d8bfd8; /* Light Purple Border */
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.question:hover {
+  transform: translateY(-5px);
+}
+
+.question h1,
+.question h2,
+.question h3,
+.question h4,
+.question h5,
+.question h6 {
+  font-family: 'Poppins', sans-serif;
+  color: #4b0082; /* Dark Purple */
+}
+
+.question p {
+  margin-bottom: 10px;
+  color: #6a0dad;
+  font-weight: 500;
+}

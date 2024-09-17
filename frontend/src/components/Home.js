@@ -1,9 +1,9 @@
 import React from 'react';
 import './Home.css';
-import { Link } from 'react-router-dom'; // Make sure you're using something like react-router for navigation
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
-import '../App.css';
+import '../App.css';  // Ensure correct import path for App.css
 
 const Home = () => {
     return (
