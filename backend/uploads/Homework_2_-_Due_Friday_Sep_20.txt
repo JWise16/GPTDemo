@@ -1,0 +1,53 @@
+---
+title: "Math 152 - Homework 2"
+author: "Gabe"
+date: "2023-09-16"
+output: pdf_document
+---
+
+
+# 1. 
+
+(7.5.9 page 425 D & S 4th edition) Suppose that $X_1,\dots , X_n$ form a random
+sample from a distribution from p.d.f.
+$$f(x|\theta) = \theta x^{\theta-1}{\bf 1}(x \in (0, 1))$$
+Suppose $\theta(>0)$ is unknown. 
+
+a. Find the MLE of $\theta$.
+
+
+b. (6.6.13 page 369 D & S 3rd Edition) Show that the sequence of MLEs of $\theta$ is consistent.  Hint: the answer to (a) should be related to an average. Use the law of large numbers and the law of the unconscious statistician to find what the average converges to, which either requires IBP or Wolfram Alpha. Then make a continuity argument.  
+
+# 2. 
+
+(7.6.5 page 441 D & S 4th Edition) Suppose that $X_1,\dots , X_n$ form a random sample from a uniform distribution on the interval $[a, b]$, where both endpoints are unknown. Find the MLE of the mean of the distribution. (Use their Theorem 7.6.2 that says that the MLE of $g(\theta)$ is $g(\hat{\theta}_{\text{MLE}}))$. Sketch the likelihood function as part of your solution.
+
+# 3. 
+
+Suppose that $X_i$, $i = 1,\dots, n$, form a random sample from a distribution with pdf $f(x|\theta) = \frac{1}{2}e^{-|x-\theta|}$ for $-\infty < x < \infty$.
+
+Not that you need to do anything with this simuation, but this distribution is called the $Laplace$ distribution (or shifted double-exponential) with $\lambda=1$, and here's what a random sample looks like
+
+```{r}
+n <- 1000
+theta <- 47
+sign <- sample(c(-1,1),n, rep=TRUE)
+x <- rexp(n)
+y <- x * sign + theta
+hist(y, prob=TRUE)
+a <- seq(theta-5,theta+5, .1)
+lines(a, 1/2 * exp(-abs(a-theta)), col='red', lwd=3)
+```
+
+a. Argue that $E(X)=\theta$ (just a sentence will do). 
+
+b.  Find the MLE of $\theta$.  Hint: to "handle" the differentiation of the absolute value, split the sum into two sums using indicator functions. What is the derivative of an indicator function almost everywhere?
+
+A note on something interesting that just happened.  The last two problems are about estimating the mean of a distribution.  If the data is normal, you end up with a similar situation to 4, but instead need to minimize $\sum(x_i-\theta)^2$, which is easily shown to be accomplished by $\hat{\theta}=\bar{X}$. But the answers to these other two problems tell us we should estimate the mean by something other than $\bar{X}$.  This was a motivating question at the beginning of the class, "If we are interested in the population mean, should we always use the sample mean?"  If you trust the MLE, the answer is clearly no.  If you don't trust the MLE, you can do more calculations, and the answer will still be no. *This was just a note and not a homework problem.*
+
+
+# 4.
+
+For the case where $X_i$ is distributed iid according to a Uniform(0,$\theta$) distribution, we found in class that the MLE was $\hat{\theta}=X_{(n)} = \max{X_i}$. We also found the
+density of the maximum to be $f_{n} = nf(x)F(x)^{n-1}$. Compute the bias of $\hat{\theta}$,
+construct an unbiased version of $\hat{\theta}$ and simulate from this distribution. Present histograms of 3 estimators, the MoM, the MLE and the unbiased version of the MLE. Discuss which of these you like better.

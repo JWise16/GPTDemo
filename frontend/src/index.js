@@ -6,9 +6,9 @@ import App from './App';
 import { worker } from './mocks/browser';
 
 // Ensure the worker starts properly
-if (process.env.NODE_ENV === 'development') {
-    worker.start();
-}
+// if (process.env.NODE_ENV === 'development') {
+//     worker.start();
+// }
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

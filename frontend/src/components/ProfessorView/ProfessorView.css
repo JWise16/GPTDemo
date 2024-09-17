@@ -1,1 +1,19 @@
-/* Styles specific to ProfessorView */
+.main-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.question-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.question-item {
+    margin: 10px 0;
+}
