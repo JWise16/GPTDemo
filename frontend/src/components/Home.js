@@ -4,15 +4,15 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div className="main-container">
+        <div className="home-container">
             <h1>Welcome to GPTDemo</h1>
             <nav>
                 <ul>
                     <li>
-                        <Link to="/professor" className="button">Professor</Link>
+                        <Link to="/professor">Professor</Link>
                     </li>
                     <li>
-                        <Link to="/student" className="button">Student</Link>
+                        <Link to="/student">Student</Link>
                     </li>
                 </ul>
             </nav>
