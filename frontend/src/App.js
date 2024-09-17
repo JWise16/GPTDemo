@@ -1,13 +1,18 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import ProfessorView from './components/ProfessorView/ProfessorView';
+import StudentView from './components/StudentView/StudentView';
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Welcome to GPTDemo</h1>
-            </header>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/professor" element={<ProfessorView />} />
+                <Route path="/student" element={<StudentView />} />
+            </Routes>
+        </Router>
     );
 }
 

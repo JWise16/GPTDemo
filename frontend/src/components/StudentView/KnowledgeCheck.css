@@ -1,0 +1,10 @@
+/* Styles specific to KnowledgeCheck */
+.question-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.question-item {
+    margin: 10px 0;
+}
